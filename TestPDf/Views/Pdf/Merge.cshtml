@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Merge Files";
+}
+
+<h2>Merge Files</h2>
+
+<form asp-action="Merge" asp-controller="Pdf" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="files">Select PDF and image files to merge</label>
+        <input type="file" id="files" name="files" multiple class="form-control" accept=".pdf,.jpg,.jpeg,.png" />
+    </div>
+    <button type="submit" class="btn btn-primary">Merge</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger">@ViewBag.Message</div>
+}
